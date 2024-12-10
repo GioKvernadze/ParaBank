@@ -1,22 +1,41 @@
 import pytest
 from Helper.DriverSetup import DriverSetup
+from Values.urls import BASE_URL
+from Pages.Login import LoginPage
+from Values.REGISTER_DATA import register_data
 
 @pytest.fixture(scope="session")
 def driver():
-    """
-    Pytest fixture to set up and tear down the WebDriver for the entire session.
-    """
+
     print("Starting WebDriver...")
     driver = DriverSetup.get_driver(browser="chrome", headless=False)
     yield driver  # Provide the driver instance to the tests
     print("Closing WebDriver...")
     driver.quit()
 
+@pytest.fixture(scope="session")
+def login_user(driver):
+
+    print("Logging in to maintain session...")
+    # Retrieve credentials
+    data = register_data()
+    username = data["Username"]
+    password = data["Password"]
+
+    # Navigate to the login page and log in
+    driver.get(BASE_URL)
+    login_page = LoginPage(driver)
+    login_page.enter_username(username)
+    login_page.enter_password(password)
+    login_page.click_login()
+
+    # Verify login
+    assert "Accounts Overview" in driver.page_source, "Login precondition failed!"
+    print("User successfully logged in.")
+
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    """
-    Hook to capture a screenshot when a test fails.
-    """
+
     outcome = yield
     report = outcome.get_result()
 

@@ -8,10 +8,7 @@ class BasePage:
         self.wait = WebDriverWait(driver, 10)  # Default wait time of 10 seconds
 
     def wait_for_element(self, locator):
-        """
-        Wait for an element to be visible and return it.
-        Logs an error if the element is not found within the timeout.
-        """
+
         try:
             return self.wait.until(EC.visibility_of_element_located(locator))
         except TimeoutException:
@@ -19,10 +16,7 @@ class BasePage:
             return None
 
     def wait_for_element_clickable(self, locator):
-        """
-        Wait for an element to be clickable and return it.
-        Logs an error if the element is not found within the timeout.
-        """
+
         try:
             return self.wait.until(EC.element_to_be_clickable(locator))
         except TimeoutException:

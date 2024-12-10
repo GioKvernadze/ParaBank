@@ -9,9 +9,7 @@ from Helper.DriverSetup import DriverSetup
 @allure.story("Login with existing user credentials")
 @allure.severity(allure.severity_level.BLOCKER)
 def test_login_existing_user(driver):
-    """
-    Test logging in with existing user credentials.
-    """
+
     with allure.step("Retrieve user credentials from saved data"):
         data = register_data()
         username = data["Username"]
