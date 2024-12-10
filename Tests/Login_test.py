@@ -1,52 +1,40 @@
 import pytest
+import allure
 from Values.urls import BASE_URL
-from Helper.DriverSetup import driver
-from Helper.logger import setup_logger
 from Pages.Login import LoginPage
 from Values.REGISTER_DATA import register_data
+from Helper.DriverSetup import DriverSetup
 
-# Initialize the logger
-logger = setup_logger()
-
+@allure.feature("User Login")
+@allure.story("Login with existing user credentials")
+@allure.severity(allure.severity_level.BLOCKER)
 def test_login_existing_user(driver):
     """
     Test logging in with existing user credentials.
     """
-    logger.info("Starting the test for logging in with existing user credentials.")
+    with allure.step("Retrieve user credentials from saved data"):
+        data = register_data()
+        username = data["Username"]
+        password = data["Password"]
+        allure.attach(f"Username: {username}\nPassword: {password}", name="Login Credentials", attachment_type=allure.attachment_type.TEXT)
 
-    # Navigate to the login page
-    try:
-        logger.info("Navigating to the login page.")
+    with allure.step("Navigate to the login page"):
         driver.get(BASE_URL)
-        logger.info("Successfully navigated to the login page.")
-    except Exception as e:
-        logger.error(f"Error while navigating to the login page: {e}")
-        raise
+        DriverSetup.take_screenshot(driver, name="Login Page")
+        allure.attach(driver.current_url, name="Current URL", attachment_type=allure.attachment_type.TEXT)
 
-    # Initialize the LoginPage and use data from the registration
-    try:
+    with allure.step("Enter login credentials"):
         login_page = LoginPage(driver)
-        data = register_data()  # Use the same function to retrieve credentials
+        login_page.enter_username(username)
+        login_page.enter_password(password)
+        DriverSetup.take_screenshot(driver, name="Credentials Entered")
 
-        logger.info(f"Logging in with username: {data['Username']} and password: {data['Password']}")
-        login_page.enter_username(data["Username"])
-        login_page.enter_password(data["Password"])
+    with allure.step("Submit login form"):
         login_page.click_login()
-        logger.info("Login submitted successfully.")
-    except Exception as e:
-        logger.error(f"Error during login process: {e}")
-        raise
+        DriverSetup.take_screenshot(driver, name="After Submit")
 
-    # Verify successful login
-    try:
-        # Replace this with an actual condition to verify successful login
-        if "Accounts Overview" in driver.page_source:
-            logger.info("Login completed successfully!")
-        else:
-            logger.error("Login failed. Expected 'Account Overview' text not found.")
-            raise AssertionError("Login failed.")
-    except Exception as e:
-        logger.error(f"Error while verifying login: {e}")
-        raise
-
-    logger.info("Login test completed successfully.")
+    with allure.step("Verify successful login"):
+        success_message = "Accounts Overview"
+        assert success_message in driver.page_source, "Login failed!"
+        DriverSetup.take_screenshot(driver, name="Login Success")
+        allure.attach(driver.page_source, name="Page Source", attachment_type=allure.attachment_type.TEXT)

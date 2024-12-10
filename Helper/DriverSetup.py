@@ -1,18 +1,34 @@
-import pytest
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
-@pytest.fixture(scope="function")
-def driver():
-    """
-    Fixture to set up and tear down the WebDriver for each test.
-    """
-    print("Starting test setup...")
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    driver.maximize_window()
-    driver.implicitly_wait(10)
-    yield driver  # Provide the WebDriver instance to the test
-    print("Cleaning up after test...")
-    driver.quit()
 
+class DriverSetup:
+    @staticmethod
+    def get_driver(browser="chrome", headless=False):
+        """
+        Set up the WebDriver instance.
+        :param browser: Browser type (default: "chrome").
+        :param headless: Run browser in headless mode if True.
+        :return: WebDriver instance.
+        """
+        options = webdriver.ChromeOptions()
+        if headless:
+            options.add_argument("--headless")
+        options.add_argument("--start-maximized")
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+        return driver
+
+    @staticmethod
+    def take_screenshot(driver, name="screenshot"):
+        """
+        Take a screenshot and attach it to the Allure report.
+        :param driver: WebDriver instance.
+        :param name: Name of the screenshot.
+        """
+        try:
+            screenshot = driver.get_screenshot_as_png()
+            allure.attach(screenshot, name=name, attachment_type=allure.attachment_type.PNG)
+        except Exception as e:
+            print(f"Failed to take screenshot: {e}")

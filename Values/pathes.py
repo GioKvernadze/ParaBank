@@ -20,3 +20,7 @@ LOGIN_PAGE_LOCATORS = {
     "LOGIN_BUTTON": (By.CSS_SELECTOR, "input.button[value='Log In']"),  # Locate by CSS
 }
 
+DASHBOARD_NAVIGATION_LOCATORS = {
+    "Home": (By.LINK_TEXT, "home"),
+    "Admin_Page": (By.LINK_TEXT, "Admin Page"),
+}

@@ -1,0 +1,3 @@
+##Run in CMD from project root##
+pytest -v -s --alluredir=allure-results Tests/Register_test.py ##Change to any other test.py##
+allure serve allure-results
