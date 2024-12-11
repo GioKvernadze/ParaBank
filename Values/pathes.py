@@ -15,12 +15,18 @@ REGISTER_PAGE_LOCATORS = {
     "REGISTER_BUTTON": (By.XPATH, "//input[@value='Register']")
 }
 LOGIN_PAGE_LOCATORS = {
-    "USERNAME_FIELD": (By.NAME, "username"),  # Locate by 'name' attribute
-    "PASSWORD_FIELD": (By.NAME, "password"),  # Locate by 'name' attribute
-    "LOGIN_BUTTON": (By.CSS_SELECTOR, "input.button[value='Log In']"),  # Locate by CSS
+    "USERNAME_FIELD": (By.NAME, "username"),
+    "PASSWORD_FIELD": (By.NAME, "password"),
+    "LOGIN_BUTTON": (By.CSS_SELECTOR, "input.button[value='Log In']"),
 }
 
-DASHBOARD_NAVIGATION_LOCATORS = {
-    "Home": (By.LINK_TEXT, "home"),
-    "Admin_Page": (By.LINK_TEXT, "Admin Page"),
+ADMIN_LOCATORS = {
+    "ADMIN_BUTTON": (By.LINK_TEXT, "Admin Page"),
+    "ADMIN_HEADER": (By.XPATH, "//h1[contains(text(),'Administration')]"),
+    "INIT_BUTTON": (By.XPATH, "//button[@name='action' and @value='INIT']"),
+    "CLEAN_BUTTON": (By.XPATH, "//button[@name='action' and @value='CLEAN']"),
+    "SHUTDOWN_JMS_BUTTON": (By.XPATH, "//input[@value='Shutdown']"),
+    "INITIAL_BALANCE": (By.ID, "initialBalance"),
+    "MINIMUM_BALANCE": (By.ID, "minimumBalance"),
+    "SUBMIT_BUTTON": (By.XPATH, "//input[@type='submit' and @class='button']"),
 }

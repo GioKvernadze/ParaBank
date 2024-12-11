@@ -1,42 +1,58 @@
 import logging
 import os
+import allure
 
-def setup_logger():
+def setup_logger(log_level=logging.INFO):
     """
-    Configure and return a logger instance.
+    Set up a logger to log messages to both a file and Allure reports.
     """
-    log_dir = "logs"  # Directory for log files
-    try:
-        # Ensure the logs directory exists
-        os.makedirs(log_dir, exist_ok=True)
-        print(f"Logs directory created or exists at: {os.path.abspath(log_dir)}")
-    except Exception as e:
-        print(f"Failed to create logs directory: {e}")
-        raise
+    log_dir = "logs"
+    log_file = os.path.join(log_dir, "test_log.log")
 
-    log_file = os.path.join(log_dir, 'test_log.log')
-    print(f"Log file path: {log_file}")  # Debugging log file path
+    # Ensure the logs directory exists
+    os.makedirs(log_dir, exist_ok=True)
 
-    # Clear any existing handlers to avoid conflicts
-    for handler in logging.root.handlers[:]:
-        logging.root.removeHandler(handler)
+    # Create a logger instance
+    logger = logging.getLogger("TestLogger")
+    logger.setLevel(log_level)
 
-    # Configure logging to file
-    logging.basicConfig(
-        filename=log_file,
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
-    logger = logging.getLogger()
+    # Avoid duplicate handlers
+    if logger.handlers:
+        return logger
 
-    # Add a console handler for debugging
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
+    # File handler: Logs messages to a file
+    file_handler = logging.FileHandler(log_file, mode="a")
+    file_handler.setLevel(log_level)
+    file_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    file_handler.setFormatter(file_format)
 
-    # Add a test log entry to confirm initialization
-    logger.info("Logger initialized with file and console handlers.")
-    print("Logger initialized.")  # Debug confirmation
+    # Stream handler: Logs messages to console
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(log_level)
+    stream_handler.setFormatter(file_format)
+
+    # Allure handler: Attach logs only if a test is running
+    class AllureHandler(logging.Handler):
+        def emit(self, record):
+            try:
+                log_message = self.format(record)
+                if record.levelno >= logging.ERROR:
+                    allure.attach(log_message, name="ERROR LOG", attachment_type=allure.attachment_type.TEXT)
+                else:
+                    allure.attach(log_message, name="LOG", attachment_type=allure.attachment_type.TEXT)
+            except KeyError:
+                # Skip attaching logs if Allure context is not active
+                pass
+
+    allure_handler = AllureHandler()
+    allure_handler.setFormatter(file_format)
+
+    # Add all handlers to the logger
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+    logger.addHandler(allure_handler)
+
+    # Log to file and console only (not Allure) to confirm setup
+    logger.info("Logger has been set up successfully!")
+
     return logger
