@@ -7,12 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 class DriverSetup:
     @staticmethod
     def get_driver(browser="chrome", headless=False):
-        """
-        Set up the WebDriver instance.
-        :param browser: Browser type (default: "chrome").
-        :param headless: Run browser in headless mode if True.
-        :return: WebDriver instance.
-        """
+
         options = webdriver.ChromeOptions()
         if headless:
             options.add_argument("--headless")
@@ -22,11 +17,7 @@ class DriverSetup:
 
     @staticmethod
     def take_screenshot(driver, name="screenshot"):
-        """
-        Take a screenshot and attach it to the Allure report.
-        :param driver: WebDriver instance.
-        :param name: Name of the screenshot.
-        """
+
         try:
             screenshot = driver.get_screenshot_as_png()
             allure.attach(screenshot, name=name, attachment_type=allure.attachment_type.PNG)

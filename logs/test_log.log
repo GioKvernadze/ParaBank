@@ -1,174 +1,64 @@
-2024-12-06 17:03:33,786 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:03:33,792 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:03:33,795 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:03:33,797 - INFO - skip test_dashboard_navigation because it depends on test_login_existing_user
-2024-12-06 17:03:33,800 - INFO - ====== WebDriver manager ======
-2024-12-06 17:03:34,548 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:03:34,759 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:03:34,922 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:03:36,110 - INFO - Starting the login test.
-2024-12-06 17:03:40,243 - INFO - Navigated to the login page.
-2024-12-06 17:03:41,341 - WARNING - Login failed: Login failed.. Skipping to registration.
-2024-12-06 17:03:41,343 - INFO - ====== WebDriver manager ======
-2024-12-06 17:03:42,029 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:03:42,328 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:03:42,720 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:03:43,813 - INFO - Starting the registration test.
-2024-12-06 17:03:45,584 - INFO - Navigated to the registration page.
-2024-12-06 17:03:46,724 - INFO - Registration completed successfully.
-2024-12-06 17:07:31,372 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:07:31,372 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:07:31,387 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:07:31,387 - INFO - ====== WebDriver manager ======
-2024-12-06 17:07:32,084 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:07:32,403 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:07:32,885 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:07:34,062 - INFO - Starting the registration test.
-2024-12-06 17:07:36,926 - INFO - Navigated to the registration page.
-2024-12-06 17:07:38,365 - INFO - Registration completed successfully.
-2024-12-06 17:07:38,365 - INFO - ====== WebDriver manager ======
-2024-12-06 17:07:39,039 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:07:39,680 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:07:40,193 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:07:41,309 - INFO - Starting the login test.
-2024-12-06 17:08:20,212 - INFO - Navigated to the login page.
-2024-12-06 17:08:20,212 - WARNING - Login failed: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=131.0.6778.109)
-Stacktrace:
-	GetHandleVerifier [0x00283433+25059]
-	(No symbol) [0x0020CE34]
-	(No symbol) [0x000EBEC3]
-	(No symbol) [0x000CD93B]
-	(No symbol) [0x0015800F]
-	(No symbol) [0x0016AE49]
-	(No symbol) [0x00151C96]
-	(No symbol) [0x00123FAC]
-	(No symbol) [0x00124F3D]
-	GetHandleVerifier [0x00575593+3113795]
-	GetHandleVerifier [0x0058A25A+3198986]
-	GetHandleVerifier [0x00582A32+3168226]
-	GetHandleVerifier [0x003232A0+680016]
-	(No symbol) [0x0021577D]
-	(No symbol) [0x00212A28]
-	(No symbol) [0x00212BC5]
-	(No symbol) [0x00205820]
-	BaseThreadInitThunk [0x774D5D49+25]
-	RtlInitializeExceptionChain [0x77B5CEBB+107]
-	RtlGetAppContainerNamedObjectPath [0x77B5CE41+561]
-	(No symbol) [0x00000000]
-. Skipping to registration.
-2024-12-06 17:08:20,316 - INFO - ====== WebDriver manager ======
-2024-12-06 17:08:21,002 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:08:25,714 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:08:26,160 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:08:27,307 - INFO - Starting the dashboard navigation test.
-2024-12-06 17:08:40,554 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E6D122FB90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c4da0cad338a78f50e09612229fa0e13
-2024-12-06 17:08:44,665 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E6D122E630>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c4da0cad338a78f50e09612229fa0e13
-2024-12-06 17:08:48,771 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E6D122F5F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c4da0cad338a78f50e09612229fa0e13
-2024-12-06 17:09:03,908 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:09:03,908 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:09:03,924 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:09:03,924 - INFO - ====== WebDriver manager ======
-2024-12-06 17:09:04,602 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:09:25,888 - INFO - ====== WebDriver manager ======
-2024-12-06 17:09:26,552 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:09:26,646 - INFO - ====== WebDriver manager ======
-2024-12-06 17:09:27,329 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:10:19,636 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:10:19,636 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:10:19,636 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:10:19,636 - INFO - ====== WebDriver manager ======
-2024-12-06 17:10:20,331 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:10:33,741 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:10:34,349 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:10:35,502 - INFO - Starting the registration test.
-2024-12-06 17:10:42,105 - INFO - Navigated to the registration page.
-2024-12-06 17:10:52,527 - INFO - Registration completed successfully.
-2024-12-06 17:10:52,528 - INFO - ====== WebDriver manager ======
-2024-12-06 17:10:53,193 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:10:54,180 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:10:56,274 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:10:57,397 - INFO - Starting the login test.
-2024-12-06 17:11:06,402 - INFO - Navigated to the login page.
-2024-12-06 17:11:07,786 - WARNING - Login failed: Login failed.. Skipping to registration.
-2024-12-06 17:11:07,786 - INFO - ====== WebDriver manager ======
-2024-12-06 17:11:08,509 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:11:08,749 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:11:09,253 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:11:10,412 - INFO - Starting the dashboard navigation test.
-2024-12-06 17:54:26,634 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:54:26,634 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:54:26,648 - INFO - Logger initialized with file and console handlers.
-2024-12-06 17:54:26,648 - INFO - skip test_dashboard_navigation because it depends on registration
-2024-12-06 17:54:26,648 - INFO - skip test_login_existing_user because it depends on registration
-2024-12-06 17:54:26,648 - INFO - ====== WebDriver manager ======
-2024-12-06 17:54:27,408 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:54:27,632 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-06 17:54:27,855 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-06 17:54:28,999 - INFO - Starting the registration test.
-2024-12-06 17:54:33,135 - INFO - Navigated to the registration page.
-2024-12-06 17:54:34,419 - INFO - Registration completed successfully.
-2024-12-06 18:06:53,338 - INFO - Logger initialized with file and console handlers.
-2024-12-06 18:06:53,346 - INFO - Logger initialized with file and console handlers.
-2024-12-06 18:06:53,349 - INFO - Logger initialized with file and console handlers.
-2024-12-06 18:08:59,931 - INFO - Logger initialized with file and console handlers.
-2024-12-06 18:08:59,947 - INFO - Logger initialized with file and console handlers.
-2024-12-06 18:08:59,948 - INFO - Logger initialized with file and console handlers.
-2024-12-10 13:57:40,977 - INFO - Logger initialized with file and console handlers.
-2024-12-10 13:57:40,985 - INFO - Logger initialized with file and console handlers.
-2024-12-10 13:57:40,985 - INFO - Logger initialized with file and console handlers.
-2024-12-10 13:57:40,985 - INFO - ====== WebDriver manager ======
-2024-12-10 13:57:41,682 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 13:57:41,867 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 13:57:42,050 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-10 13:57:43,203 - INFO - Starting the dashboard navigation test.
-2024-12-10 13:57:53,311 - INFO - ====== WebDriver manager ======
-2024-12-10 13:57:54,006 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 13:57:54,166 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 13:57:54,358 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-10 13:57:55,538 - INFO - Using credentials: Username=51608EMUrsMm, Password=10154377136cMrpU
-2024-12-10 13:58:00,306 - INFO - Navigated to the login page.
-2024-12-10 13:58:01,795 - INFO - Login form submitted.
-2024-12-10 13:58:01,807 - INFO - Generated user data: {'FirstName': 'wTnO', 'LastName': 'dUWUNW', 'Address': 'ZLDDAk12910482', 'City': 'lrFRUGZg', 'State': 'NNCDs', 'ZipCode': 3439817702, 'Phone': 72573, 'SSN': 162310109, 'Username': '90781929440xRPXQW', 'Password': '698590539RTBD', 'Confirm': '698590539RTBD', 'Login_Username': '90781929440xRPXQW', 'Login_Password': '698590539RTBD'}
-2024-12-10 13:58:02,110 - INFO - Navigated to the registration page.
-2024-12-10 13:58:02,772 - INFO - Registration form filled.
-2024-12-10 13:58:03,204 - INFO - Registration form submitted.
-2024-12-10 13:58:03,535 - INFO - Registration completed successfully.
-2024-12-10 13:59:11,938 - INFO - Logger initialized with file and console handlers.
-2024-12-10 13:59:11,938 - INFO - ====== WebDriver manager ======
-2024-12-10 13:59:13,109 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 13:59:13,251 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 13:59:13,409 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-10 13:59:14,621 - INFO - Generated user data: {'FirstName': 'AEAWJZrw', 'LastName': 'mBlQF', 'Address': 'jPGI32205', 'City': 'xkGu', 'State': 'TuuqBST', 'ZipCode': 1840, 'Phone': 65140175313, 'SSN': 81684515623, 'Username': '9149iRXoGVFY', 'Password': '126378DKEJIw', 'Confirm': '126378DKEJIw', 'Login_Username': '9149iRXoGVFY', 'Login_Password': '126378DKEJIw'}
-2024-12-10 13:59:17,071 - INFO - Navigated to the registration page.
-2024-12-10 13:59:17,763 - INFO - Registration form filled.
-2024-12-10 13:59:19,004 - INFO - Registration form submitted.
-2024-12-10 13:59:19,207 - INFO - Registration completed successfully.
-2024-12-10 14:01:39,166 - INFO - Logger initialized with file and console handlers.
-2024-12-10 14:01:39,166 - INFO - ====== WebDriver manager ======
-2024-12-10 14:01:39,862 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 14:01:40,075 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 14:01:40,212 - INFO - Driver [C:\Users\Giorgi\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-10 14:01:41,378 - INFO - Using credentials: Username=9149iRXoGVFY, Password=126378DKEJIw
-2024-12-10 14:01:45,466 - INFO - Navigated to the login page.
-2024-12-10 14:01:48,815 - INFO - Login form submitted.
-2024-12-10 14:01:48,959 - INFO - Login successful.
-2024-12-11 16:51:16,593 - INFO - Logger has been set up successfully!
-2024-12-11 16:53:00,268 - INFO - Logger has been set up successfully!
-2024-12-11 16:53:02,428 - INFO - Generating new user data.
-2024-12-11 16:53:02,429 - INFO - Generated user data: {'FirstName': 'vzzjJWu', 'LastName': 'NWjsw', 'Address': 'igwqJVz811197744920', 'City': 'CbBJMq', 'State': 'Brfgfh', 'ZipCode': 2915225, 'Phone': 33644, 'SSN': 869010942371, 'Username': '57496462548cmobxpf', 'Password': '672011cRvH', 'Confirm': '672011cRvH', 'Login_Username': '57496462548cmobxpf', 'Login_Password': '672011cRvH'}
-2024-12-11 16:53:02,430 - INFO - Navigating to the registration page.
-2024-12-11 16:53:06,273 - INFO - Current URL: https://parabank.parasoft.com/parabank/register.htm
-2024-12-11 16:53:06,440 - INFO - Filling out the registration form.
-2024-12-11 16:53:08,613 - INFO - Registration form submitted successfully.
-2024-12-11 16:53:08,629 - INFO - Registration completed successfully.
-2024-12-11 16:53:08,795 - INFO - Registration test completed successfully.
-2024-12-11 16:56:38,150 - INFO - Logger has been set up successfully!
-2024-12-11 16:56:40,222 - INFO - Retrieving user credentials from saved data.
-2024-12-11 16:56:40,222 - INFO - Using username: 57496462548cmobxpf
-2024-12-11 16:56:40,222 - INFO - Navigating to the login page.
-2024-12-11 16:56:43,668 - INFO - Entering login credentials.
-2024-12-11 16:56:43,966 - INFO - Submitting login form.
-2024-12-11 16:56:45,285 - INFO - Login successful. Accounts Overview found.
-2024-12-11 16:56:45,463 - INFO - Test for user login completed successfully.
+2024-12-13 17:26:15,226 - INFO - Logger has been set up successfully!
+2024-12-13 17:35:03,999 - INFO - Logger has been set up successfully!
+2024-12-13 17:35:12,591 - INFO - Retrieving user credentials from saved data.
+2024-12-13 17:35:12,592 - INFO - Using username: 147592303037LwePxbpc
+2024-12-13 17:35:12,593 - INFO - Navigating to the login page.
+2024-12-13 17:35:13,515 - INFO - Entering login credentials.
+2024-12-13 17:35:13,812 - INFO - Submitting login form.
+2024-12-13 17:35:14,702 - ERROR - Login verification failed. 'Accounts Overview' not found.
+2024-12-13 17:35:15,013 - INFO - Generating new user data.
+2024-12-13 17:35:15,013 - INFO - Generated user data: {'FirstName': 'enFnC', 'LastName': 'hmTI', 'Address': 'hQCZ80895', 'City': 'YHQSNkAl', 'State': 'RgVp', 'ZipCode': 8138669, 'Phone': 9733970550, 'SSN': 816811769889, 'Username': '168341qIQZwh', 'Password': '500075616eNTZYh', 'Confirm': '500075616eNTZYh', 'Login_Username': '168341qIQZwh', 'Login_Password': '500075616eNTZYh'}
+2024-12-13 17:35:15,029 - INFO - Navigating to the registration page.
+2024-12-13 17:35:15,361 - INFO - Current URL: https://parabank.parasoft.com/parabank/register.htm
+2024-12-13 17:35:15,522 - INFO - Filling out the registration form.
+2024-12-13 17:35:17,005 - INFO - Registration form submitted successfully.
+2024-12-13 17:35:17,005 - INFO - Registration completed successfully.
+2024-12-13 17:35:17,156 - INFO - Registration test completed successfully.
+2024-12-15 17:10:28,640 - INFO - Logger has been set up successfully!
+2024-12-15 17:10:37,227 - INFO - Retrieving admin configuration data.
+2024-12-15 17:10:37,227 - INFO - Admin configuration data: {'INITIAL_BALANCE': '50000.00', 'MINIMUM_BALANCE': '5000.00'}
+2024-12-15 17:10:37,227 - INFO - Navigating to the Admin Page.
+2024-12-15 17:10:37,682 - INFO - Admin Page loaded successfully.
+2024-12-15 17:10:37,842 - INFO - Initializing the database.
+2024-12-15 17:10:38,770 - INFO - Database initialized successfully.
+2024-12-15 17:10:38,772 - INFO - Cleaning the database.
+2024-12-15 17:10:40,163 - INFO - Database cleaned successfully.
+2024-12-15 17:10:40,163 - INFO - Shutting down JMS service.
+2024-12-15 17:10:41,112 - INFO - JMS service shutdown successfully.
+2024-12-15 17:10:41,112 - INFO - Updating application settings.
+2024-12-15 17:10:42,659 - INFO - Application settings updated successfully.
+2024-12-15 17:10:42,659 - INFO - Verifying Admin Page is still loaded.
+2024-12-15 17:10:42,834 - INFO - Admin Page verification successful.
+2024-12-15 17:10:42,835 - INFO - Test for Admin Page actions completed successfully.
+2024-12-15 17:24:45,946 - INFO - Logger has been set up successfully!
+2024-12-15 17:24:52,779 - INFO - Retrieving admin configuration data.
+2024-12-15 17:24:52,781 - INFO - Admin configuration data: {'INITIAL_BALANCE': '50000.00', 'MINIMUM_BALANCE': '5000.00'}
+2024-12-15 17:24:52,781 - INFO - Navigating to the Admin Page.
+2024-12-15 17:24:53,195 - INFO - Admin Page loaded successfully.
+2024-12-15 17:24:53,369 - INFO - Initializing the database.
+2024-12-15 17:24:54,069 - INFO - Database initialized successfully.
+2024-12-15 17:24:54,069 - INFO - Cleaning the database.
+2024-12-15 17:24:54,617 - INFO - Database cleaned successfully.
+2024-12-15 17:24:54,617 - INFO - Shutting down JMS service.
+2024-12-15 17:24:55,718 - INFO - JMS service shutdown successfully.
+2024-12-15 17:24:55,718 - INFO - Updating application settings.
+2024-12-15 17:24:57,263 - INFO - Application settings updated successfully.
+2024-12-15 17:24:57,263 - INFO - Verifying Admin Page is still loaded.
+2024-12-15 17:24:57,446 - INFO - Admin Page verification successful.
+2024-12-15 17:24:57,462 - INFO - Test for Admin Page actions completed successfully.
+2024-12-15 17:31:50,102 - INFO - Logger has been set up successfully!
+2024-12-15 17:31:58,099 - INFO - Retrieving admin configuration data.
+2024-12-15 17:31:58,099 - INFO - Admin configuration data: {'INITIAL_BALANCE': '50000.00', 'MINIMUM_BALANCE': '5000.00'}
+2024-12-15 17:31:58,099 - INFO - Navigating to the Admin Page.
+2024-12-15 17:31:58,937 - INFO - Admin Page loaded successfully.
+2024-12-15 17:31:59,104 - INFO - Initializing the database.
+2024-12-15 17:31:59,811 - INFO - Database initialized successfully.
+2024-12-15 17:31:59,811 - INFO - Cleaning the database.
+2024-12-15 17:32:00,390 - INFO - Database cleaned successfully.
+2024-12-15 17:32:00,390 - INFO - Shutting down JMS service.
+2024-12-15 17:32:01,944 - INFO - JMS service shutdown successfully.
+2024-12-15 17:32:01,944 - INFO - Updating application settings.
+2024-12-15 17:32:03,694 - INFO - Application settings updated successfully.
+2024-12-15 17:32:03,694 - INFO - Verifying Admin Page is still loaded.
+2024-12-15 17:32:03,873 - INFO - Admin Page verification successful.
+2024-12-15 17:32:03,873 - INFO - Test for Admin Page actions completed successfully.

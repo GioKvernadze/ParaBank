@@ -1,78 +1,58 @@
 import pytest
 import allure
-from Values.urls import BASE_URL
 from Pages.Login import LoginPage
+from Values.urls import BASE_URL
 from Values.REGISTER_DATA import register_data
 from Helper.DriverSetup import DriverSetup
 from Helper.logger import setup_logger
 
-# Initialize logger
 logger = setup_logger()
 
 @allure.feature("User Login")
-@allure.story("Login with existing user credentials")
+@allure.story("Verify Login Functionality")
 @allure.severity(allure.severity_level.BLOCKER)
-def test_login_existing_user(driver):
-
-    with allure.step("Retrieve user credentials from saved data"):
+def test_login_functionality(driver):
+    """
+    Explicitly test login functionality using credentials from REGISTER_DATA.
+    """
+    with allure.step("Retrieve saved user credentials"):
         try:
-            logger.info("Retrieving user credentials from saved data.")
             data = register_data()
             username = data["Username"]
             password = data["Password"]
-            logger.info(f"Using username: {username}")
-            allure.attach(f"Username: {username}\nPassword: {password}", name="Login Credentials", attachment_type=allure.attachment_type.TEXT)
+            allure.attach(f"Username: {username}\nPassword: {password}", name="Login Credentials")
+            logger.info(f"Using Username: {username}")
         except Exception as e:
-            logger.error(f"Failed to retrieve credentials: {e}")
-            pytest.fail("Failed to retrieve login credentials.")
+            logger.error(f"Failed to retrieve login data: {e}")
+            pytest.fail("Unable to retrieve user credentials!")
 
-    with allure.step("Navigate to the login page"):
+    with allure.step("Navigate to Login Page"):
         try:
-            logger.info("Navigating to the login page.")
             driver.get(BASE_URL)
-            DriverSetup.take_screenshot(driver, name="Login Page")
-            allure.attach(driver.current_url, name="Current URL", attachment_type=allure.attachment_type.TEXT)
+            DriverSetup.take_screenshot(driver, "Login_Page")
+            logger.info("Navigated to Login Page.")
         except Exception as e:
-            logger.error(f"Failed to navigate to the login page: {e}")
-            DriverSetup.take_screenshot(driver, name="Navigation Error")
-            pytest.fail("Navigation to login page failed.")
+            logger.error(f"Failed to load login page: {e}")
+            pytest.fail("Failed to load login page!")
 
-    with allure.step("Enter login credentials"):
+    with allure.step("Enter login credentials and submit"):
         try:
-            logger.info("Entering login credentials.")
             login_page = LoginPage(driver)
             login_page.enter_username(username)
             login_page.enter_password(password)
-            DriverSetup.take_screenshot(driver, name="Credentials Entered")
-        except Exception as e:
-            logger.error(f"Failed to enter login credentials: {e}")
-            DriverSetup.take_screenshot(driver, name="Credentials Error")
-            pytest.fail("Failed to enter login credentials.")
-
-    with allure.step("Submit login form"):
-        try:
-            logger.info("Submitting login form.")
             login_page.click_login()
-            DriverSetup.take_screenshot(driver, name="After Submit")
+            DriverSetup.take_screenshot(driver, "After_Submit")
+            logger.info("Submitted login form.")
         except Exception as e:
-            logger.error(f"Failed to submit login form: {e}")
-            DriverSetup.take_screenshot(driver, name="Submit Error")
-            pytest.fail("Failed to submit login form.")
+            logger.error(f"Failed during login submission: {e}")
+            pytest.fail("Failed during login submission.")
 
     with allure.step("Verify successful login"):
         try:
-            success_message = "Accounts Overview"
-            assert success_message in driver.page_source, "Login failed!"
-            logger.info("Login successful. Accounts Overview found.")
-            DriverSetup.take_screenshot(driver, name="Login Success")
-            allure.attach(driver.page_source, name="Page Source", attachment_type=allure.attachment_type.TEXT)
-        except AssertionError as e:
-            logger.error("Login verification failed. 'Accounts Overview' not found.")
-            DriverSetup.take_screenshot(driver, name="Login Failed")
-            pytest.fail("Login failed! Verification unsuccessful.")
-        except Exception as e:
-            logger.error(f"Unexpected error during login verification: {e}")
-            DriverSetup.take_screenshot(driver, name="Login Verification Error")
-            pytest.fail("Unexpected error during login verification.")
-
-    logger.info("Test for user login completed successfully.")
+            assert "Accounts Overview" in driver.page_source, "Login verification failed!"
+            DriverSetup.take_screenshot(driver, "Login_Success")
+            logger.info("Login successful!")
+        except AssertionError:
+            logger.error("Login failed: 'Accounts Overview' not found!")
+            DriverSetup.take_screenshot(driver, "Login_Failed")
+            pytest.fail("Login failed! Could not verify Accounts Overview.")

@@ -30,3 +30,22 @@ ADMIN_LOCATORS = {
     "MINIMUM_BALANCE": (By.ID, "minimumBalance"),
     "SUBMIT_BUTTON": (By.XPATH, "//input[@type='submit' and @class='button']"),
 }
+ACCOUNT_SERVICES_LOCATORS = {
+    "OPEN_NEW_ACCOUNT": ("XPATH", "//a[contains(@href, 'openaccount.htm')]"),
+    "ACCOUNTS_OVERVIEW": ("XPATH", "//a[contains(@href, 'overview.htm')]"),
+    "TRANSFER_FUNDS": ("XPATH", "//a[contains(@href, 'transfer.htm')]"),
+    "BILL_PAY": ("XPATH", "//a[contains(@href, 'billpay.htm')]"),
+    "FIND_TRANSACTIONS": ("XPATH", "//a[contains(@href, 'findtrans.htm')]"),
+    "UPDATE_CONTACT_INFO": ("XPATH", "//a[contains(@href, 'updateprofile.htm')]"),
+    "REQUEST_LOAN": ("XPATH", "//a[contains(@href, 'requestloan.htm')]"),
+    "LOG_OUT": ("XPATH", "//a[contains(@href, 'logout.htm')]"),
+}
+
+OPEN_NEW_ACCOUNT_LOCATORS = {
+    "OPEN_NEW_ACCOUNT": (By.XPATH, "//a[contains(@href, 'openaccount.htm')]"),
+    "ACCOUNT_TYPE_DROPDOWN": (By.XPATH, "//select[@id='type' and @class='input']"),
+    "FROM_ACCOUNT_DROPDOWN": (By.ID, "fromAccountId"),
+    "OPEN_NEW_ACCOUNT_BUTTON": (By.XPATH, "//input[@value='Open New Account']"),
+    "ACCOUNT_OPENED_MESSAGE": (By.XPATH, "//h1[contains(text(), 'Account Opened')]"),
+    "NEW_ACCOUNT_NUMBER": (By.ID, "newAccountId"),
+}

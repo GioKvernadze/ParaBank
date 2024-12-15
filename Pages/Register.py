@@ -1,5 +1,5 @@
 from Pages.BasePage import BasePage
-from Values.pathes import REGISTER_PAGE_LOCATORS
+from Values.locators import REGISTER_PAGE_LOCATORS
 
 class RegisterPage(BasePage):
 
