@@ -3,11 +3,10 @@ from Helper.DriverSetup import DriverSetup
 from Helper.LoginHelper import LoginHelper
 
 
+
 @pytest.fixture(scope="session")
 def driver():
-    """
-    Pytest fixture to set up and tear down the WebDriver for the entire session.
-    """
+
     print("Starting WebDriver...")
     driver = DriverSetup.get_driver(browser="chrome", headless=False)
     yield driver  # Provide the driver instance to the tests
@@ -17,9 +16,7 @@ def driver():
 
 @pytest.fixture(scope="session")
 def login_user(driver):
-    """
-    Fixture to ensure the user is logged in. If login fails, fallback to registration.
-    """
+
     login_helper = LoginHelper(driver)
     try:
         login_helper.login_with_fallback()
@@ -30,9 +27,7 @@ def login_user(driver):
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    """
-    Hook to capture a screenshot if a test fails.
-    """
+
     outcome = yield
     report = outcome.get_result()
 

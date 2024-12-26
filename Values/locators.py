@@ -28,8 +28,11 @@ ADMIN_LOCATORS = {
     "SHUTDOWN_JMS_BUTTON": (By.XPATH, "//input[@value='Shutdown']"),
     "INITIAL_BALANCE": (By.ID, "initialBalance"),
     "MINIMUM_BALANCE": (By.ID, "minimumBalance"),
-    "SUBMIT_BUTTON": (By.XPATH, "//input[@type='submit' and @class='button']"),
+    "SUCCESS_MESSAGE": (By.XPATH, "//p[contains(text(), 'Settings saved successfully')]"),
+    "SUBMIT_BUTTON": (By.XPATH, "//input[@value='Submit']")
+
 }
+
 ACCOUNT_SERVICES_LOCATORS = {
     "OPEN_NEW_ACCOUNT": ("XPATH", "//a[contains(@href, 'openaccount.htm')]"),
     "ACCOUNTS_OVERVIEW": ("XPATH", "//a[contains(@href, 'overview.htm')]"),

@@ -1,10 +1,9 @@
-from Pages.Login import LoginPage
-from Pages.Register import RegisterPage
-from Values.locators import LOGIN_PAGE_LOCATORS
+from Pages.LoginPage.Login import LoginPage
+from Pages.RegisterPage.Register import RegisterPage
 from Values.urls import BASE_URL, REGISTER_URL
-from Values.REGISTER_DATA import register_data
+from Values.register_data import register_data
 from Helper.DriverSetup import DriverSetup
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException
 
 
 class LoginHelper:
@@ -35,16 +34,16 @@ class LoginHelper:
 
             # Verify login success
             if "Accounts Overview" in self.driver.page_source:
-                print("User successfully logged in.")
+                print("[INFO] User successfully logged in.")
                 return True
             elif "Error!" in self.driver.page_source:  # Check for error message
-                print("Login failed due to server error.")
+                print("[ERROR] Login failed due to server error.")
                 return False
             else:
-                print("Login failed for an unknown reason.")
+                print("[ERROR] Login failed for an unknown reason.")
                 return False
         except NoSuchElementException as e:
-            print(f"Login failed due to exception: {e}")
+            print(f"[ERROR] Login failed due to exception: {e}")
             return False
 
     def perform_registration(self):
@@ -62,7 +61,7 @@ class LoginHelper:
         register_page.enter_credentials(data["Password"], data["Confirm"])
         register_page.click_register()
 
-        print("Registration completed successfully.")
+        print("[INFO] Registration completed successfully.")
         DriverSetup.take_screenshot(self.driver, "registration_completed")
         return data
 
@@ -71,6 +70,6 @@ class LoginHelper:
         Attempt login and perform registration if necessary.
         """
         if not self.perform_login():
-            print("Retrying login after registration...")
+            print("[WARNING] Retrying login after registration...")
             self.perform_registration()
-            print("Skipping login attempt after successful registration.")
+            print("[INFO] Skipping login attempt after successful registration.")
